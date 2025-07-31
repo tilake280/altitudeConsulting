@@ -1,78 +1,506 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Altitude Consulting</title>
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
-  <style>
-    /* [Styles omitted for brevity — same styles from previous update] */
-  </style>
-</head>
-<body>
-  <header>
-    <div>
-      <h1 class="logo-text">Altitude Consulting</h1>
-      <div class="header-tagline">Tailored Solutions for Complex Business Challenges</div>
-    </div>
-    <button class="nav-toggle">&#9776;</button>
-    <nav>
-      <a href="#services">Services</a>
-      <a href="#about">About</a>
-      <a href="#mvv">Mission & Vision</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </header>
+/* Reset & base */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
 
-  <section class="hero">
-    <div class="hero-content">
-      <h1>Customized Strategies to Solve Complex Challenges</h1>
-      <p>We help healthcare leaders navigate complexity and drive long-term value.</p>
-      <a href="#contact" class="cta-btn">Work With Us</a>
-    </div>
-  </section>
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f9f9f9;
+}
 
-  <section id="about" class="section-mvv">
-    <h2>About Us</h2>
-    <p>Altitude Consulting LLC is a strategy consulting firm based in New Jersey. Founded by Neel Tilak, a healthcare industry veteran with over 28 years of experience, we help healthcare, pharmaceutical, and consumer health organizations solve complex business problems through tailored strategic solutions. We offer a flexible approach, whether clients need high-level advisory or hands-on implementation.</p>
-  </section>
+img {
+    max-width: 100%;
+    display: block;
+    height: auto;
+}
 
-  <section id="mvv" class="section-mvv">
-    <h2>Mission, Vision & Values</h2>
-    <h3>Mission</h3>
-    <p>To provide innovative, customized strategic solutions that drive growth and solve complex business challenges for healthcare companies, enhancing return on investment.</p>
-    <h3>Vision</h3>
-    <p>To become the leading consulting firm, known for transforming high-level strategies into practical, results-driven actions.</p>
-    <h3>Values</h3>
-    <ul>
-      <li>Deep listening and understanding</li>
-      <li>Customized strategic planning</li>
-      <li>Flexibility in delivery: from advisory to implementation</li>
-      <li>Operational excellence and ROI focus</li>
-      <li>Trust, transparency, and impact</li>
-    </ul>
-  </section>
+/* Container for layout consistency */
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
 
-  <section id="services" class="section-mvv">
-    <h2>Our Services</h2>
-    <ul>
-      <li><strong>Strategic Planning:</strong> Aligning business goals with actionable strategies</li>
-      <li><strong>Operational Efficiency:</strong> Streamlining operations to maximize performance</li>
-      <li><strong>Change Management:</strong> Supporting organizational transitions smoothly</li>
-      <li><strong>Competitive Intelligence:</strong> Providing insights on market trends and competitors</li>
-      <li><strong>Innovation Strategy:</strong> Fostering growth through forward-thinking strategies</li>
-      <li><strong>Digital Transformation:</strong> Leveraging AI, analytics, and tech for competitive edge</li>
-    </ul>
-  </section>
+/* Navigation */
+header {
+    background-color: #004d99;
+    color: white;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
 
-  <footer>
-    <p>&copy; 2025 Altitude Consulting, LLC. All rights reserved. | <a href="#">LinkedIn</a></p>
-  </footer>
+.header-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    position: relative;
+    min-height: 60px;
+}
 
-  <script>
-    const toggle = document.querySelector('.nav-toggle');
-    const nav = document.querySelector('nav');
-    toggle.addEventListener('click', () => nav.classList.toggle('open'));
-  </script>
-</body>
-</html>
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.logo-img {
+    height: 3rem;
+    width: auto;
+    flex-shrink: 0;
+}
+
+.logo-text {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin: 0;
+    white-space: nowrap;
+}
+
+nav {
+    flex-shrink: 0;
+    display: block;
+    margin-right: 1vw;
+}
+
+.nav-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 0.5rem;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+    padding: 0.5rem;
+    display: block;
+}
+
+nav ul li a:hover,
+nav ul li a:focus {
+    color: #ffcc00;
+    outline: none;
+}
+
+/* Hero Section */
+.hero {
+    position: relative;
+    color: white;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 100vw;
+    min-height: 350px;
+
+    background: url(assets/plane.jpg) no-repeat center center;
+    background-size: cover;
+
+    z-index: 0;
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    max-width: 700px;
+    z-index: 2;
+}
+
+.hero h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.hero p {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    line-height: 1.4;
+}
+
+.cta-btn {
+    display: inline-block;
+    background-color: #ffcc00;
+    color: #004d99;
+    font-weight: 700;
+    padding: 0.75rem 2rem;
+    border-radius: 30px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(255, 204, 0, 0.4);
+    font-size: 1rem;
+}
+
+.cta-btn:hover,
+.cta-btn:focus {
+    background-color: #e6b800;
+    outline: none;
+    box-shadow: 0 6px 12px rgba(230, 184, 0, 0.6);
+    transform: translateY(-2px);
+}
+
+/* Sections */
+.section {
+    padding: 3rem 0;
+    background-color: white;
+    margin-bottom: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgb(0 0 0 / 0.05);
+}
+
+.section h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    color: #004d99;
+    font-weight: 700;
+    text-align: center;
+}
+
+.section h3 {
+    font-size: 1.3rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    color: #004d99;
+}
+
+.section p {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    color: #555;
+}
+
+.section ul {
+    padding-left: 1.25rem;
+    margin-bottom: 1.5rem;
+    color: #555;
+}
+
+.section ul li {
+    margin-bottom: 0.75rem;
+    font-size: 1rem;
+}
+
+/* Services grid */
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    max-width: 900px;
+    margin: 2rem auto 0;
+}
+
+.card {
+    perspective: 1000px;
+    height: 180px;
+    min-height: 180px;
+}
+
+.card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    cursor: pointer;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card:hover .card-inner,
+.card:focus-within .card-inner {
+    transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1.5rem;
+    box-sizing: border-box;
+}
+
+.card-front {
+    background: linear-gradient(135deg, #004d99 0%, #0066cc 100%);
+    color: white;
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.card-back {
+    background-color: #f0f4f8;
+    color: #333;
+    transform: rotateY(180deg);
+    font-size: 0.95rem;
+    font-weight: 400;
+    padding: 1.5rem;
+    line-height: 1.4;
+}
+
+.card h3 {
+    margin: 0;
+    color: white;
+    font-weight: 700;
+    font-size: 1.1rem;
+    text-align: center;
+}
+
+.card p {
+    margin: 0;
+    color: #333;
+    font-size: 0.95rem;
+    text-align: center;
+}
+
+/* Contact Section */
+#contact {
+    padding: 3rem 2rem;
+    background-color: white;
+    margin: 2rem auto;
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    max-width: 900px;
+    width: 90%;
+}
+
+#contact a {
+    color: #004d99;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+#contact a:hover {
+    color: #ffcc00;
+}
+
+/* Footer */
+footer {
+    background-color: #004d99;
+    color: white;
+    padding: 2rem 0;
+    text-align: center;
+    margin-top: 2rem;
+}
+
+footer p {
+    margin: 0.5rem 0;
+    font-size: 0.9rem;
+}
+
+footer a {
+    color: #ffcc00;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+footer a:hover,
+footer a:focus {
+    color: white;
+    outline: none;
+}
+
+/* Mobile Responsive Design */
+@media (max-width: 768px) {
+    .header-wrapper {
+        flex-direction: column;
+        align-items: stretch;
+        padding: 1rem;
+        gap: 1rem;
+    }
+
+    .logo-container {
+        justify-content: center;
+    }
+
+    .logo-img {
+        height: 2.5rem;
+    }
+
+    .logo-text {
+        font-size: 1.1rem;
+    }
+
+    .nav-toggle {
+        display: block;
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+    }
+
+    nav {
+        width: 100%;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 0;
+        text-align: center;
+        background-color: #003d80;
+        border-radius: 8px;
+        padding: 1rem 0;
+        display: none;
+    }
+
+    nav ul.nav-open {
+        display: flex;
+    }
+
+    nav ul li a {
+        padding: 0.75rem 1rem;
+        border-bottom: 1px solid #004d99;
+    }
+
+    nav ul li:last-child a {
+        border-bottom: none;
+    }
+
+    .hero {
+        padding: 3rem 1rem 2rem;
+        min-height: 250px;
+    }
+
+    .hero h2 {
+        font-size: 1.6rem;
+        margin-bottom: 1rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .section {
+        padding: 2rem 0;
+        margin-bottom: 1rem;
+    }
+
+    .section h2 {
+        font-size: 1.5rem;
+    }
+
+    .section h3 {
+        font-size: 1.2rem;
+    }
+
+    .card-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        margin: 1.5rem auto 0;
+    }
+
+    .card {
+        height: 160px;
+        min-height: 160px;
+    }
+
+    .card-front {
+        font-size: 1.1rem;
+    }
+
+    .card h3 {
+        font-size: 1rem;
+    }
+
+    .card-back {
+        font-size: 0.9rem;
+        padding: 1rem;
+    }
+
+    #contact {
+        padding: 2rem 1rem;
+        margin: 1rem auto;
+        width: 95%;
+    }
+
+    footer {
+        padding: 1.5rem 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        width: 95%;
+        padding: 0 0.5rem;
+    }
+
+    .hero h2 {
+        font-size: 1.4rem;
+    }
+
+    .hero p {
+        font-size: 0.95rem;
+    }
+
+    .cta-btn {
+        padding: 0.6rem 1.5rem;
+        font-size: 0.9rem;
+    }
+
+    .section h2 {
+        font-size: 1.3rem;
+    }
+
+    .section p {
+        font-size: 0.95rem;
+    }
+
+    .card {
+        height: 150px;
+        min-height: 150px;
+    }
+
+    .card-front {
+        font-size: 1rem;
+        padding: 1rem;
+    }
+
+    .card-back {
+        font-size: 0.85rem;
+        padding: 0.75rem;
+    }
+
+    #contact {
+        padding: 1.5rem 0.75rem;
+        width: 98%;
+    }
+}
