@@ -1,81 +1,167 @@
-<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Altitude Consulting</title>
-  <link rel="stylesheet" href="styles.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <div class="header-wrapper container">
-      <div class="logo-container">
-        <img src="assets/logo.png" alt="Altitude Consulting Logo" class="logo-img" />
-        <h1 class="logo-text">Altitude Consulting</h1>
-      </div>
-      <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
-      <nav>
-        <ul id="navLinks">
-          <li><a href="#mission">Mission</a></li>
-          <li><a href="#vision">Vision</a></li>
-          <li><a href="#values">Values</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </nav>
-    </div>
-    <p class="tagline">Strategy for those who serve the future of health.</p>
-  </header>
 
+  <!-- Navigation -->
+<header>
+  <div class="header-wrapper">
+    <div class="logo-container">
+      <img src="assets/altitudeLogo.png" alt="" style="width: 5vw;">
+      <h1 class="logo-text">Altitude Consulting</h1>
+    </div>
+    <button class="nav-toggle" onclick="toggleNav()">☰</button>
+    <nav>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#mission" onclick="closeNav()">Mission</a></li>
+        <li><a href="#services" onclick="closeNav()">Services</a></li>
+        <li><a href="#market" onclick="closeNav()">Market</a></li>
+        <li><a href="#contact" onclick="closeNav()">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+  <!-- Hero Section -->
   <section class="hero">
     <div class="hero-content">
-      <h2>Elevate Your Impact</h2>
-      <p>Empowering leaders in medicine and healthcare to navigate complexity with clarity, courage, and purpose.</p>
-      <a href="#contact" class="cta-btn">Get in Touch</a>
+      <h2>Tailored Solutions for Complex Business Challenges</h2>
+      <p>Empowering healthcare organizations through strategy, clarity, and execution.</p>
+      <a href="#contact" class="cta-btn">Schedule a Consultation</a>
     </div>
   </section>
 
-  <section class="section" id="mission">
+  <!-- Mission & Vision -->
+  <section id="mission" class="section">
     <div class="container">
-      <h2>Mission</h2>
-      <p>To empower leaders in innovative medicine, consumer healthcare, and medical technology to play the infinite game—building clarity of purpose, resilient strategy, and cultures of trust that serve people and endure beyond today’s complexity.</p>
-      <p>We guide organizations advancing human health to lead with purpose, adapt with courage, and design systems that create lasting value for all stakeholders.</p>
-    </div>
-  </section>
-
-  <section class="section" id="vision">
-    <div class="container">
-      <h2>Vision</h2>
-      <p>A future where health innovation is driven not only by breakthrough science, but by leaders who think systemically, act with integrity, and serve the greater good.</p>
-      <p>At Altitude Consulting, we envision a world where enduring healthcare companies grow through clarity, adaptability, and a deep commitment to elevating both people and outcomes.</p>
-    </div>
-  </section>
-
-  <section class="section" id="values">
-    <div class="container">
-      <h2>Values</h2>
-      <ul>
-        <li><strong>1. Purpose is Our North Star:</strong> We help companies uncover and lead with a Just Cause—one that inspires people, sustains momentum, and delivers meaning well beyond the next milestone.</li>
-        <li><strong>2. Courage Over Comfort:</strong> True innovation demands principled risk-taking. We guide leaders through uncertainty with conviction, empathy, and a steady focus on long-term impact.</li>
-        <li><strong>3. Build Trust, Serve Others:</strong> We foster environments where people thrive—by leading with humility, listening deeply, and putting the needs of individuals, teams, and patients first.</li>
-        <li><strong>4. Think in Systems:</strong> We approach challenges holistically, connecting science, operations, markets, and culture to unlock strategies that are both visionary and executable.</li>
-        <li><strong>5. Learn, Adapt, Elevate:</strong> In a world of constant change, we champion curiosity, reflection, and reinvention—so leaders and organizations grow stronger, wiser, and more resilient over time.</li>
+      <h2>Our Mission</h2>
+      <p style="text-align: center;">
+        To provide innovative, customized strategic solutions that drive growth and solve complex business challenges for healthcare companies, enhancing return on investment.
+      </p>
+      <h2>Our Vision</h2>
+      <p style="text-align: center;">
+        To become the leading consulting firm known for transforming high-level strategies into practical, results-driven actions.
+      </p>
+      <h3 style="text-align: center;">2025 Objectives</h3>
+      <ul style="margin-right: 10vw; margin-left: 10vw;">
+        <li>Secure 10 major clients in healthcare, pharma, and consumer health.</li>
+        <li>Achieve 90% client satisfaction via feedback loops.</li>
+        <li>Generate $500,000 in first-year revenue.</li>
       </ul>
     </div>
   </section>
 
-  <section id="contact" class="section">
+  <!-- Services -->
+<section id="services" class="section" style="padding: 3rem 2rem; background-color: white; margin: 2rem auto; border-radius: 20px; box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1); max-width: 900px; width: 90%;">
+  <div class="container">
+    <h2>Our Services</h2>
+    <div class="card-grid">
+      <div class="card" tabindex="0">
+        <div class="card-inner">
+          <div class="card-front">
+            <h3>Strategic Planning</h3>
+          </div>
+          <div class="card-back">
+            <p>Aligning goals with practical strategies to drive sustainable growth and competitive advantage.</p>
+          </div>
+        </div>
+      </div>
+      <div class="card" tabindex="0">
+        <div class="card-inner">
+          <div class="card-front">
+            <h3>Operational Efficiency</h3>
+          </div>
+          <div class="card-back">
+            <p>Streamlining operations and processes for better ROI and enhanced performance.</p>
+          </div>
+        </div>
+      </div>
+      <div class="card" tabindex="0">
+        <div class="card-inner">
+          <div class="card-front">
+            <h3>Change Management</h3>
+          </div>
+          <div class="card-back">
+            <p>Facilitating smooth organizational transitions with minimal disruption to operations.</p>
+          </div>
+        </div>
+      </div>
+      <div class="card" tabindex="0">
+        <div class="card-inner">
+          <div class="card-front">
+            <h3>Competitive Intelligence</h3>
+          </div>
+          <div class="card-back">
+            <p>Analyzing competitors and market trends to give you the strategic edge you need.</p>
+          </div>
+        </div>
+      </div>
+      <div class="card" tabindex="0">
+        <div class="card-inner">
+          <div class="card-front">
+            <h3>Innovation Strategy</h3>
+          </div>
+          <div class="card-back">
+            <p>Developing future-focused solutions and strategies for sustainable growth.</p>
+          </div>
+        </div>
+      </div>
+      <div class="card" tabindex="0">
+        <div class="card-inner">
+          <div class="card-front">
+            <h3>Digital Transformation</h3>
+          </div>
+          <div class="card-back">
+            <p>Guiding your technology evolution with AI, analytics, and modern digital tools.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+  <!-- Market Overview -->
+  <section id="market" class="section">
     <div class="container">
-      <h2>Contact</h2>
-      <p>Email us at <a href="mailto:neeltilak@gmail.com">neeltilak@gmail.com</a></p>
+      <h2>Market Advantage</h2>
+      <p>
+        The consulting industry is shifting rapidly. Boutique firms like Altitude are leading the way in agility, specialization, and cost-effective strategies.
+      </p>
+      <ul>
+        <li><strong>SMEs:</strong> seeking optimization and growth strategies.</li>
+        <li><strong>Enterprises:</strong> tackling complex strategic initiatives.</li>
+        <li><strong>Startups:</strong> needing market entry and strategic launch planning.</li>
+      </ul>
+      <p>
+        With a focus on healthcare, pharma, and consumer health, Altitude is positioned to deliver real-world results that scale.
+      </p>
     </div>
   </section>
 
+  <!-- Contact Form -->
+  <section id="contact" class="section" style="padding: 3rem 2rem; background-color: white; margin: 2rem auto; border-radius: 20px; box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1); max-width: 900px; width: 90%;">
+    <div class="container">
+      <h2>Contact Us</h2>
+      <p>Let's talk about how Altitude can elevate your business strategy.</p>
+      <p>Send us an email at <a href="mailto:altitudeconsulting@gmail.com">altitudeconsulting@gmail.com</a> or submit a request through our <a href="#" onclick="alert('Contact form would be linked here')">contact form</a>.</p>
+    </div>
+  </section>
+
+  <!-- Footer -->
   <footer>
-    <p>&copy; 2025 Altitude Consulting. All rights reserved.</p>
+    <div class="container">
+      <p>&copy; 2025 Altitude Consulting LLC • New Providence, NJ</p>
+      <p>
+        <a href="https://www.linkedin.com/company/altitude-consulting-strategy" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      </p>
+    </div>
   </footer>
 
-  <script src="scripts.js"></script>
+ <script src="script.js"></script>
 </body>
 </html>
